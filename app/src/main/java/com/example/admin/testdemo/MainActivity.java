@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        startActivity(new Intent(this,Main2Activity.class));
     }
     @Override
     protected void onNewIntent(Intent intent) {
