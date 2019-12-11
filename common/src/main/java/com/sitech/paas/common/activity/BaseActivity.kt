@@ -14,9 +14,35 @@ abstract class BaseActivity<B : ViewDataBinding, M : BaseModel> : AppCompatActiv
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        onCreateBefore()
         mBinding = DataBindingUtil.setContentView<B>(this, getLayoutId())
         mModel = getModel()
         getLifecycle().addObserver(mModel)
+        initData()
+        initView()
+        initListener()
+    }
+
+    /**
+     * setContentView之前调用
+     */
+    open fun onCreateBefore() {
+
+    }
+
+    open fun initListener() {
+
+
+    }
+
+    open fun initView() {
+
+
+    }
+
+    open fun initData() {
+
+
     }
 
     abstract fun getLayoutId(): Int
